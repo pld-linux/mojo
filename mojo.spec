@@ -7,7 +7,7 @@ Version:	2.8.3
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://dl.sourceforge.net/mojomail/%{name}-%(echo %{version} | sed -e 's#\.#_#g').tar.gz
+Source0:	http://dl.sourceforge.net/mojomail/%{name}-%(echo %{version} | tr . _).tar.gz
 # Source0-md5:	fb979ec4c72e15fecf5ba0d4d0f3a90b
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
