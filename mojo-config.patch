@@ -1,0 +1,48 @@
+--- ./extensions/mojo_bounce_handler.pl.org	Tue Apr  1 22:07:35 2003
++++ ./extensions/mojo_bounce_handler.pl	Sun Apr 13 02:42:11 2003
+@@ -27,12 +27,12 @@
+ # $lib NEEDS to havve the correct path to your mojo directory
+ BEGIN{
+ 
+-my $lib = '/home/youraccount/publichtml/cgi-bin/mojo';
++my $lib = '/usr/share/mojo';
+ 
+ 
+ 	  push(@INC, $lib);
+ 	  push(@INC, "$lib/MOJO");
+-	   push(@INC, "$lib/MOJO/perllib");
++	   push(@INC, "/var/lib/mojo");
+ }
+ 
+ # skip these addresses for any removal
+--- ./extensions/mojo_send.pl.org	Tue Apr  1 22:07:35 2003
++++ ./extensions/mojo_send.pl	Sun Apr 13 02:42:48 2003
+@@ -10,7 +10,7 @@
+ 
+ 
+ 
+-my $lib = '/home/path/to/cgi-bin/mojo';
++my $lib = '/usr/share/mojo';
+ 
+ 
+ 
+--- ./MOJO/Config.pm.org	Tue Apr  1 22:07:37 2003
++++ ./MOJO/Config.pm	Sun Apr 13 02:39:53 2003
+@@ -106,7 +106,7 @@
+ 
+ =cut
+ 
+-$FILES = '/home/youraccount/mojo_files';
++$FILES = '/var/lib/mojo';
+ 
+ =pod
+ 
+@@ -136,7 +136,7 @@
+ 
+ =cut
+ 
+-$MOJO_URL ='http://www.changetoyoursite.com/cgi-bin/mojo/mojo.cgi';
++$MOJO_URL ='http://localhost/mojo/mojo.cgi';
+ 
+ =pod
+ 
