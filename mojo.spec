@@ -3,7 +3,7 @@ Summary:	A Web-based mailing list manager
 Summary(pl):	Menad¿er list mailowych operty o www
 Name:		mojo
 Version:	2.8.3
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://prdownloads.sourceforge.net/mojomail/%{name}-%(echo %{version} | sed -e 's#\.#_#g').tar.gz
@@ -19,6 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_mojodir	/usr/share/%{name}
 %define		_mojovars	/var/lib/%{name}
+
+%define		_noautoreq	'perl(to)'
 
 %description
 Mojo Mail is a light-weight Web-based email mailing list manager. It
@@ -42,12 +44,15 @@ list by list basis.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+# KJM - don't include half of the perl....
+rm -rf MOJO/perllib
 install -d  $RPM_BUILD_ROOT{%{_mojodir}/{extensions,plugins},%{_mojovars},%{_sysconfdir}/httpd}
 
 install %{name}.cgi $RPM_BUILD_ROOT%{_mojodir}
 cp -R MOJO $RPM_BUILD_ROOT%{_mojodir}
 install plugins/* $RPM_BUILD_ROOT%{_mojodir}/plugins
 install extensions/* $RPM_BUILD_ROOT%{_mojodir}/extensions
+ln -s %{_mojodir}/MOJO/Config.pm $RPM_BUILD_ROOT%{_sysconfdir}/httpd/%{name}_Config.pm
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd
 
@@ -80,14 +85,21 @@ fi
 %defattr(644,root,root,755)
 %doc README.txt extras/{documentation/{html_version,pod_source},Flash,scripts,SQL,templates,testing}
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/httpd/%{name}.conf
+%{_sysconfdir}/httpd/%{name}_Config.pm
 %dir %{_mojodir}
 %dir %{_mojodir}/extensions
-%dir %{_mojodir}/MOJO
 %dir %{_mojodir}/plugins
+%dir %{_mojodir}/MOJO
+%dir %{_mojodir}/MOJO/App
+%dir %{_mojodir}/MOJO/Logging
+%dir %{_mojodir}/MOJO/Mail
+%dir %{_mojodir}/MOJO/MailingList
+%dir %{_mojodir}/MOJO/Security
+%dir %{_mojodir}/MOJO/Template
 %attr(755,root,root) %{_mojodir}/*.cgi
 %attr(755,root,root) %{_mojodir}/plugins/*.cgi
 %attr(755,root,root) %{_mojodir}/extensions/*.pl
-%attr(755,root,root) %{_mojodir}/MOJO/*
+%attr(750,http,http) %config(noreplace) %verify(not size mtime md5) %{_mojodir}/MOJO/Config.pm
+%attr(755,root,root) %{_mojodir}/MOJO/MailingList.pm
+%attr(755,root,root) %{_mojodir}/MOJO/*/*
 %attr(755,http,http) %dir %{_mojovars}
-# KJM - don't include half of the perl....
-%exclude %{_mojodir}/MOJO/perllib
