@@ -1,12 +1,13 @@
+# TODO: config file cannot be in /usr/share!
 %include	/usr/lib/rpm/macros.perl
 Summary:	A Web-based mailing list manager
-Summary(pl):	Menad¿er list mailowych operty o www
+Summary(pl):	Zarz±dca list mailowych operty o www
 Name:		mojo
 Version:	2.8.3
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://prdownloads.sourceforge.net/mojomail/%{name}-%(echo %{version} | sed -e 's#\.#_#g').tar.gz
+Source0:	http://dl.sourceforge.net/mojomail/%{name}-%(echo %{version} | sed -e 's#\.#_#g').tar.gz
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://mojo.skazat.com/
@@ -37,6 +38,23 @@ applications. Mojo Mail can be run simply as a CGI script and needs no
 special modules installed. The entire look of html pages created by
 Mojo Mail can be customized with any template you can provide, on a
 list by list basis.
+
+%description -l pl
+Mojo Mail to lekki zarz±dca list e-mailowych oparty na WWW. Obs³uguje
+listy wy³±cznie anonsowe oraz listy dyskusyjne, a tak¿e
+archiwizowanie, podwójn± subskrypcjê oraz podwójne wypisywanie.
+Wiadomo¶ci mog± byæ wysy³ane przy u¿yciu sendmaila, qmaila lub nawet
+bezpo¶redniego po³±czenia SMTP (wszystkie naraz lub w paczkach co
+jaki¶ czas). Ca³a administracja listami mo¿e byæ wykonywana z poziomu
+przegl±darki poprzez administracyjny panel kontrolny Mojo Maila.
+Tworzenie nowych list i administrowanie nimi jest ³atwe. Mojo Mail
+jest dobr± alternatyw± dla programów typu Majordomo, je¶li chcemy daæ
+wiêcej kontroli w³a¶ciwym w³a¶cicielom list, którzy mog± nie mieæ zbyt
+du¿ego do¶wiadczenia z tego typu aplikacjami. Mojo Mail mo¿e byæ
+uruchamiane po prostu jako skrypt CGI i nie wymaga zainstalowanych
+¿adnych specjalnych modu³ów. Ca³y wygl±d stron HTML tworzonych przez
+Mojo Maila mo¿e byæ zmieniony na poziomie list przez dostarczenie
+dowolnego szablonu.
 
 %prep
 %setup -q -n %{name}
@@ -99,6 +117,7 @@ fi
 %attr(755,root,root) %{_mojodir}/*.cgi
 %attr(755,root,root) %{_mojodir}/plugins/*.cgi
 %attr(755,root,root) %{_mojodir}/extensions/*.pl
+# FIXME: config file cannot be in /usr/share
 %attr(750,http,http) %config(noreplace) %verify(not size mtime md5) %{_mojodir}/MOJO/Config.pm
 %attr(755,root,root) %{_mojodir}/MOJO/MailingList.pm
 %attr(755,root,root) %{_mojodir}/MOJO/*/*
