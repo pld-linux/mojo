@@ -1,20 +1,15 @@
---- ./extensions/mojo_bounce_handler.pl.org	Tue Apr  1 22:07:35 2003
-+++ ./extensions/mojo_bounce_handler.pl	Sun Apr 13 02:42:11 2003
-@@ -27,12 +27,12 @@
- # $lib NEEDS to havve the correct path to your mojo directory
- BEGIN{
+--- ./extensions/mojo_bounce_handler.pl.orig	Mon Jun 30 03:20:18 2003
++++ ./extensions/mojo_bounce_handler.pl	Sat Jul 19 10:26:09 2003
+@@ -10,6 +10,9 @@
+ #Change! the lib paths
+ use lib qw(
  
--my $lib = '/home/youraccount/publichtml/cgi-bin/mojo';
-+my $lib = '/usr/share/mojo';
- 
- 
- 	  push(@INC, $lib);
- 	  push(@INC, "$lib/MOJO");
--	   push(@INC, "$lib/MOJO/perllib");
-+	   push(@INC, "/var/lib/mojo");
- }
- 
- # skip these addresses for any removal
++ /var/lib/mojo
++ /usr/share/mojo
++
+  /home/account/www/cgi-bin/mojo
+  /home/account/www/cgi-bin/mojo/MOJO
+  /home/account/www/cgi-bin/mojo/MOJO/perllib
 --- ./extensions/mojo_send.pl.org	Tue Apr  1 22:07:35 2003
 +++ ./extensions/mojo_send.pl	Sun Apr 13 02:42:48 2003
 @@ -10,7 +10,7 @@
