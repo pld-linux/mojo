@@ -3,12 +3,12 @@
 Summary:	A Web-based mailing list manager
 Summary(pl):	Zarz±dca list mailowych operty o www
 Name:		mojo
-Version:	2.8.3
-Release:	1
+Version:	2.8.8
+Release:	0.1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/mojomail/%{name}-%(echo %{version} | tr . _).tar.gz
-# Source0-md5:	fb979ec4c72e15fecf5ba0d4d0f3a90b
+# Source0-md5:	a4e0cd138baaed663a1b46728900102b
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://mojo.skazat.com/
