@@ -1,7 +1,7 @@
 # TODO: config file cannot be in /usr/share!
 %include	/usr/lib/rpm/macros.perl
 Summary:	A Web-based mailing list manager
-Summary(pl):	Zarz±dca list mailowych operty o www
+Summary(pl):	Zarz±dca list mailowych oparty o WWW
 Name:		mojo
 Version:	2.8.8
 Release:	0.1
