@@ -12,7 +12,7 @@ Source0:	http://dl.sourceforge.net/mojomail/%{name}-%(echo %{version} | tr . _).
 Source1:	%{name}.conf
 Patch0:		%{name}-config.patch
 URL:		http://mojo.skazat.com/
-BuildRequires:	perl
+BuildRequires:	perl-base
 Requires(post,postun):	apache
 Requires(post,postun):	grep
 Requires(postun):	fileutils
