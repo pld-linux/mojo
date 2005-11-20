@@ -16,7 +16,7 @@ BuildRequires:	rpm-perlprov
 Requires(post,postun):	apache
 Requires(post,postun):	grep
 Requires(postun):	fileutils
-Requires:	apache
+Requires:	webserver = apache
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_mojodir	/usr/share/%{name}
