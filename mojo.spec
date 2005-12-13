@@ -103,7 +103,7 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc README.txt extras/{documentation/{html_version,pod_source},Flash,scripts,SQL,templates,testing}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/httpd/%{name}.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd/%{name}.conf
 %{_sysconfdir}/httpd/%{name}_Config.pm
 %dir %{_mojodir}
 %dir %{_mojodir}/extensions
@@ -119,7 +119,7 @@ fi
 %attr(755,root,root) %{_mojodir}/plugins/*.cgi
 %attr(755,root,root) %{_mojodir}/extensions/*.pl
 # FIXME: config file cannot be in /usr/share
-%attr(750,http,http) %config(noreplace) %verify(not size mtime md5) %{_mojodir}/MOJO/Config.pm
+%attr(750,http,http) %config(noreplace) %verify(not md5 mtime size) %{_mojodir}/MOJO/Config.pm
 %attr(755,root,root) %{_mojodir}/MOJO/MailingList.pm
 %attr(755,root,root) %{_mojodir}/MOJO/*/*
 %attr(755,http,http) %dir %{_mojovars}
