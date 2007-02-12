@@ -1,7 +1,7 @@
 # TODO: config file cannot be in /usr/share!
 %include	/usr/lib/rpm/macros.perl
 Summary:	A Web-based mailing list manager
-Summary(pl):	Zarz±dca list mailowych oparty o WWW
+Summary(pl.UTF-8):   ZarzÄ…dca list mailowych oparty o WWW
 Name:		mojo
 Version:	2.8.8
 Release:	0.1
@@ -40,21 +40,21 @@ special modules installed. The entire look of html pages created by
 Mojo Mail can be customized with any template you can provide, on a
 list by list basis.
 
-%description -l pl
-Mojo Mail to lekki zarz±dca list e-mailowych oparty na WWW. Obs³uguje
-listy wy³±cznie anonsowe oraz listy dyskusyjne, a tak¿e
-archiwizowanie, podwójn± subskrypcjê oraz podwójne wypisywanie.
-Wiadomo¶ci mog± byæ wysy³ane przy u¿yciu sendmaila, qmaila lub nawet
-bezpo¶redniego po³±czenia SMTP (wszystkie naraz lub w paczkach co
-jaki¶ czas). Ca³a administracja listami mo¿e byæ wykonywana z poziomu
-przegl±darki poprzez administracyjny panel kontrolny Mojo Maila.
-Tworzenie nowych list i administrowanie nimi jest ³atwe. Mojo Mail
-jest dobr± alternatyw± dla programów typu Majordomo, je¶li chcemy daæ
-wiêcej kontroli w³a¶ciwym w³a¶cicielom list, którzy mog± nie mieæ zbyt
-du¿ego do¶wiadczenia z tego typu aplikacjami. Mojo Mail mo¿e byæ
+%description -l pl.UTF-8
+Mojo Mail to lekki zarzÄ…dca list e-mailowych oparty na WWW. ObsÅ‚uguje
+listy wyÅ‚Ä…cznie anonsowe oraz listy dyskusyjne, a takÅ¼e
+archiwizowanie, podwÃ³jnÄ… subskrypcjÄ™ oraz podwÃ³jne wypisywanie.
+WiadomoÅ›ci mogÄ… byÄ‡ wysyÅ‚ane przy uÅ¼yciu sendmaila, qmaila lub nawet
+bezpoÅ›redniego poÅ‚Ä…czenia SMTP (wszystkie naraz lub w paczkach co
+jakiÅ› czas). CaÅ‚a administracja listami moÅ¼e byÄ‡ wykonywana z poziomu
+przeglÄ…darki poprzez administracyjny panel kontrolny Mojo Maila.
+Tworzenie nowych list i administrowanie nimi jest Å‚atwe. Mojo Mail
+jest dobrÄ… alternatywÄ… dla programÃ³w typu Majordomo, jeÅ›li chcemy daÄ‡
+wiÄ™cej kontroli wÅ‚aÅ›ciwym wÅ‚aÅ›cicielom list, ktÃ³rzy mogÄ… nie mieÄ‡ zbyt
+duÅ¼ego doÅ›wiadczenia z tego typu aplikacjami. Mojo Mail moÅ¼e byÄ‡
 uruchamiane po prostu jako skrypt CGI i nie wymaga zainstalowanych
-¿adnych specjalnych modu³ów. Ca³y wygl±d stron HTML tworzonych przez
-Mojo Maila mo¿e byæ zmieniony na poziomie list przez dostarczenie
+Å¼adnych specjalnych moduÅ‚Ã³w. CaÅ‚y wyglÄ…d stron HTML tworzonych przez
+Mojo Maila moÅ¼e byÄ‡ zmieniony na poziomie list przez dostarczenie
 dowolnego szablonu.
 
 %prep
